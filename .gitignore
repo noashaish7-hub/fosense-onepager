@@ -1,0 +1,9 @@
+Fosense One-Pager*.html
+*.pdf
+DESIGN_HANDOFF*.md
+.impeccable/
+qr/
+assets/fonts/
+assets/fosense-logo-white.png
+assets/mixiii-health-tech-il-logo.jpeg
+.DS_Store
