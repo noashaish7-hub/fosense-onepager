@@ -46,18 +46,18 @@
   .hero-text{margin:18px 0 0;max-width:920px;color:var(--text);font-size:16px;line-height:1.55;text-align:justify;hyphens:auto;-webkit-hyphens:auto;}
   .modnote{margin:14px 0 0;max-width:920px;color:var(--muted);font-size:13px;line-height:1.5;font-style:italic;}
 
-  .flow{display:grid;grid-template-columns:1fr 52px 1fr 52px 1fr;align-items:stretch;margin:30px 0;}
-  .flow-card{background:var(--pale);border:1px solid var(--line);padding:18px;min-height:0;}
+  .flow{display:flex;align-items:stretch;margin:30px 0;}
+  .flow-card{background:var(--pale);border:1px solid var(--line);padding:18px;min-height:0;min-width:0;flex:1 1 0;}
   .flow-card:nth-child(3){background:var(--flowmid);border-color:var(--flowmidline);}
   .flow-title{color:var(--ink);font-size:14px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
   .chips{display:flex;flex-direction:column;gap:6px;}
   .chiprow{display:flex;gap:6px;flex-wrap:wrap;}
   .chip{border:1px solid var(--chipline);border-radius:999px;padding:4px 9px;font-size:11px;line-height:1.15;color:var(--chiptext);background:var(--chipbg);}
-  .flow-card p{margin:0;color:var(--text);font-size:14.5px;line-height:1.5;text-align:justify;hyphens:auto;-webkit-hyphens:auto;}
-  .arrow{display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:20px;font-weight:300;opacity:.6;}
+  .flow-card p{margin:0;color:var(--text);font-size:14.5px;line-height:1.5;text-align:justify;}
+  .arrow{display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:20px;font-weight:300;opacity:.6;flex:0 0 52px;}
 
   .main-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:28px;margin-top:8px;}
-  .section-card{border:1px solid var(--line);padding:24px;background:var(--cardbg);}
+  .section-card{border:1px solid var(--line);padding:24px;background:var(--cardbg);min-width:0;}
   h2{margin:0 0 16px;color:var(--ink);font-size:14px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;}
   .section-card p{margin:0 0 12px;color:var(--text);font-size:14.5px;line-height:1.5;text-align:justify;hyphens:auto;-webkit-hyphens:auto;}
   .section-card p:last-child{margin-bottom:0;}
@@ -119,7 +119,7 @@
     .topbar{flex-direction:column;align-items:flex-start;gap:18px;}
     .logo{width:200px;} .event-card{width:100%;} .event-logo{margin-left:0;} .event-title,.event-details{text-align:left;}
     h1{font-size:25px;max-width:100%;} .subhead{font-size:15px;}
-    .flow{grid-template-columns:1fr;gap:12px;} .arrow{display:none;}
+    .flow{flex-direction:column;gap:12px;} .arrow{display:none;}
     .main-grid{grid-template-columns:1fr;gap:16px;}
     .boundaries{grid-template-columns:1fr;gap:14px;padding:22px;}
     .status-contact{grid-template-columns:1fr;gap:18px;} .contact{text-align:left;}
@@ -136,28 +136,28 @@
     .screen-only{ display:none !important; }
     .themebtn{ display:none !important; }
     .qr-print{ display:block !important; }
-    .page{ display:flex; flex-direction:column; width:210mm; height:297mm; min-height:0; margin:0; padding:9mm 12mm 7mm; box-shadow:none; overflow:hidden; }
-    .topbar{ align-items:center; padding-bottom:5mm; } .logo{width:48mm;}
+    .page{ display:flex; flex-direction:column; width:210mm; height:297mm; min-height:0; margin:0; padding:5mm 12mm 4mm; box-shadow:none; overflow:hidden; }
+    .topbar{ align-items:center; padding-bottom:2.5mm; } .logo{width:48mm;}
     .event-card{ width:74mm; padding:2.6mm 3.4mm; } .event-logo{ width:38mm; margin-bottom:1.6mm; }
-    .event-title{ font-size:6.6pt; letter-spacing:.08em; margin-bottom:1.3mm; } .event-details{ font-size:6.4pt; line-height:1.35; }
-    .evt-cta{ font-size:6.8pt; padding:1.5mm 2mm; margin-top:1.8mm; border-radius:12px; }
-    .hero{ padding:6mm 0 5.5mm; }
-    .label{ font-size:6.8pt; margin-bottom:3.4mm; letter-spacing:.14em; }
-    h1{ font-size:19pt; line-height:1.07; max-width:100%; }
-    .subhead{ font-size:9.2pt; margin-top:3.2mm; } .hero-text{ font-size:8.6pt; line-height:1.34; margin-top:3.2mm; }
-    .modnote{ font-size:7.4pt; margin-top:2.6mm; }
-    .flow{ grid-template-columns:1fr 8mm 1fr 8mm 1fr; margin:6mm 0 0; }
-    .flow-card{ min-height:0; padding:4mm; } .flow-title{ font-size:7pt; margin-bottom:2mm; }
-    .chip{ font-size:5.9pt; padding:1.1mm 1.8mm; } .chips{gap:1.1mm;} .flow-card p{ font-size:7pt; line-height:1.3; } .arrow{ font-size:12pt; }
-    .main-grid{ gap:5mm; margin-top:6mm; } .section-card{ padding:4.4mm; }
-    h2{ font-size:7pt; letter-spacing:.12em; margin-bottom:2.4mm; } .section-card p{ font-size:7.1pt; line-height:1.26; margin-bottom:2mm; }
-    .numbered{ gap:1.5mm; } .number-row{ grid-template-columns:6mm 1fr; gap:2.2mm; padding-bottom:1.7mm; } .num{ font-size:11pt; } .number-row p{ font-size:6.9pt; line-height:1.25; }
-    .boundaries{ margin-top:6mm; padding:5mm 5.6mm; grid-template-columns:32mm 1fr; gap:5mm; }
-    .boundary-list{ gap:1mm; } .boundary-line{ font-size:6.4pt; line-height:1.24; padding-bottom:1.2mm; }
-    .status-contact{ margin-top:6mm; padding-top:4mm; gap:6mm; grid-template-columns:1fr .9fr; }
-    .status p{ font-size:6.5pt; line-height:1.3; margin-bottom:1.6mm; } .contact .name{ font-size:7.6pt; } .contact p{ font-size:6.5pt; } .contact .email{ font-size:6.6pt; margin-top:1.4mm; }
-    .patent{ font-size:5.9pt; margin-top:2.2mm; }
-    .qr-print .box{ width:28mm; height:28mm; } .qr-print .lab{ font-size:6.2pt; }
+    .event-title{ font-size:5.61pt; letter-spacing:.08em; margin-bottom:1.3mm; } .event-details{ font-size:5.44pt; line-height:1.35; }
+    .evt-cta{ font-size:5.78pt; padding:1.5mm 2mm; margin-top:1.8mm; border-radius:12px; }
+    .hero{ padding:3mm 0 2.5mm; }
+    .label{ font-size:5.78pt; margin-bottom:2.2mm; letter-spacing:.14em; }
+    h1{ font-size:16.15pt; line-height:1.07; max-width:100%; }
+    .subhead{ font-size:7.82pt; margin-top:2.4mm; } .hero-text{ font-size:7.31pt; line-height:1.34; margin-top:2.4mm; }
+    .modnote{ font-size:6.29pt; margin-top:2mm; }
+    .flow{ display:flex; flex-direction:row; margin:3mm 0 0; }
+    .flow-card{ min-height:0; padding:4mm; } .flow-title{ font-size:5.95pt; margin-bottom:2mm; }
+    .chip{ font-size:5.02pt; padding:1.1mm 1.8mm; } .chips{gap:1.1mm;} .flow-card p{ font-size:5.95pt; line-height:1.3; } .arrow{ display:flex; font-size:10.20pt; flex:0 0 8mm; }
+    .main-grid{ gap:4mm; margin-top:3mm; } .section-card{ padding:3.4mm; }
+    h2{ font-size:5.95pt; letter-spacing:.12em; margin-bottom:1.8mm; } .section-card p{ font-size:6.03pt; line-height:1.26; margin-bottom:2mm; }
+    .numbered{ gap:1mm; } .number-row{ grid-template-columns:6mm 1fr; gap:2.2mm; padding-bottom:1mm; } .num{ font-size:9.35pt; } .number-row p{ font-size:5.87pt; line-height:1.25; }
+    .boundaries{ margin-top:2.5mm; padding:3mm 5.6mm; grid-template-columns:32mm 1fr; gap:4mm; }
+    .boundary-list{ gap:0.6mm; } .boundary-line{ font-size:5.44pt; line-height:1.24; padding-bottom:0.7mm; }
+    .status-contact{ margin-top:1.2mm; padding-top:1.2mm; gap:6mm; grid-template-columns:1fr .9fr; }
+    .status p{ font-size:5.18pt; line-height:1.22; margin-bottom:0.8mm; } .contact .name{ font-size:6.46pt; } .contact p{ font-size:5.52pt; } .contact .email{ font-size:5.61pt; margin-top:1.4mm; }
+    .patent{ font-size:5.02pt; margin-top:1.4mm; }
+    .qr-print .box{ width:19mm; height:19mm; } .qr-print .lab{ font-size:5.27pt; }
   }
 </style></head>
 <body>
