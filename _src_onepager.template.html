@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 <style>
 @@FONTFACE@@
 :root{
-  --paper:#F2F3F1; --surround:#E9ECE8; --petrol:#406060; --ink:#24332F; --muted:#5C6E6A;
+  --paper:#F4F5F3; --surround:#E9ECE8; --petrol:#406060; --ink:#161616; --muted:#5C6E6A;
   --gold:#F4C14A; --hair:rgba(64,96,96,.16);
   --sans:'Arimo','Helvetica Neue','Helvetica','Arial',sans-serif;
 }
@@ -26,7 +26,7 @@ body{overflow-x:hidden;}
 
 /* masthead */
 .mast{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:18px 28px;}
-.mast img{height:clamp(56px,8.4vw,78px);width:auto;display:block;}
+.mast img{height:clamp(66px,9.8vw,96px);width:auto;display:block;}
 .badge{text-align:right;max-width:320px;margin-left:auto;}
 .badge .b1{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--petrol);line-height:1.5;}
 .badge .b2{font-size:11.5px;color:var(--muted);line-height:1.55;margin-top:3px;}
@@ -35,7 +35,7 @@ body{overflow-x:hidden;}
 /* hero */
 .hero{padding-top:clamp(22px,3.6vw,34px);}
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--muted);}
-h1{font-weight:700;color:var(--petrol);font-size:clamp(25px,4.4vw,38px);line-height:1.1;letter-spacing:-.012em;margin:18px 0 0;max-width:none;text-align:justify;text-justify:inter-word;}
+h1{font-weight:700;color:var(--petrol);font-size:clamp(21px,3.5vw,31px);line-height:1.1;letter-spacing:-.012em;margin:14px 0 0;max-width:none;text-align:justify;text-justify:inter-word;}
 .sub{font-size:clamp(14.5px,1.9vw,16.5px);line-height:1.5;color:var(--ink);margin:clamp(18px,2.6vw,24px) 0 0;max-width:64ch;text-wrap:pretty;}
 .intro{font-size:clamp(13px,1.7vw,14px);line-height:1.62;color:var(--ink);margin:clamp(22px,3vw,30px) 0 0;max-width:78ch;text-wrap:pretty;}
 .intro strong{color:var(--petrol);font-weight:700;}
@@ -143,10 +143,10 @@ h1{font-weight:700;color:var(--petrol);font-size:clamp(25px,4.4vw,38px);line-hei
   html,body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   body{overflow:visible;}
   .pad{padding:0;display:block;}
-  .sheet{max-width:none;width:210mm;min-height:297mm;box-shadow:none;padding:4mm 11mm;}
+  .sheet{max-width:none;width:210mm;min-height:297mm;box-shadow:none;padding:2.5mm 10mm;}
   .spine-line,.tick{animation:none;opacity:1;transform:none;}
   .s-only{display:none!important;}
-  .mast img{height:44px;}
+  .mast img{height:52px;}
   .badge .b1{font-size:8px;} .badge .b2{font-size:8px;}
   .rule{margin-top:7px;}
   .hero{padding-top:8px;}
@@ -161,7 +161,7 @@ h1{font-weight:700;color:var(--petrol);font-size:clamp(25px,4.4vw,38px);line-hei
   .src{font-size:8px;padding:2px 0;}
   .sources{margin-top:4px;}
   .st-body{font-size:8.1px;line-height:1.28;margin-top:3px;}
-  .block{margin-top:6px;padding-top:4px;gap:4px 28px;}
+  .block{margin-top:4px;padding-top:3px;gap:4px 28px;}
   .label{font-size:8px;flex-basis:100px;}
   .body p,.diff p{font-size:8px;line-height:1.26;}
   .body p+p{margin-top:3px;}
@@ -176,22 +176,36 @@ h1{font-weight:700;color:var(--petrol);font-size:clamp(25px,4.4vw,38px);line-hei
   .qr .qt1{font-size:9px;} .qr .qt2{font-size:7.6px;}
 }
 
-/* ===== DARK / NEGATIVE THEME — petrol #406060 ground, white text ===== */
-:root{ --paper:#406060; --surround:#37514e; --petrol:#FFFFFF; --ink:#EEF2F0; --muted:rgba(238,242,240,.62); --hair:rgba(238,242,240,.18); }
-.mast img,.contact img{ filter:brightness(0) invert(1); }
-.sheet{ box-shadow:0 1px 0 rgba(255,255,255,.06),0 30px 70px -30px rgba(0,0,0,.5); }
-.spine-line{ background:rgba(238,242,240,.28); }
-.mod{ background:rgba(255,255,255,.05); }
-.mod-st.go{ background:var(--gold); color:#20302d; }
-.mod-st.warm{ background:transparent; color:var(--gold); border:1px solid rgba(244,193,74,.55); }
-.mod-st.work{ background:transparent; color:var(--ink); border:1px dashed rgba(238,242,240,.5); }
-.xcard{ background:rgba(255,255,255,.05); }
-.qr{ background:rgba(255,255,255,.05); }
-.diff .n{ color:var(--gold); }
-@media print{ html,body{ background:#37514e; } .sheet{ background:var(--paper); } }
+/* ===== DARK MODE (toggle) — petrol #406060 ground, white text ===== */
+:root[data-theme="dark"]{ --paper:#406060; --surround:#33504d; --petrol:#FFFFFF; --ink:#FFFFFF; --muted:rgba(255,255,255,.78); --hair:rgba(255,255,255,.24); }
+[data-theme="dark"] .mast img,[data-theme="dark"] .contact img{ filter:brightness(0) invert(1); }
+[data-theme="dark"] .sheet{ box-shadow:0 1px 0 rgba(255,255,255,.06),0 30px 70px -30px rgba(0,0,0,.55); }
+[data-theme="dark"] .spine-line{ background:rgba(255,255,255,.34); }
+[data-theme="dark"] .mod{ background:rgba(255,255,255,.07); }
+[data-theme="dark"] .mod-st.go{ background:var(--gold); color:#20302d; }
+[data-theme="dark"] .mod-st.warm{ background:transparent; color:var(--gold); border:1px solid rgba(244,193,74,.6); }
+[data-theme="dark"] .mod-st.work{ background:transparent; color:var(--ink); border:1px dashed rgba(255,255,255,.55); }
+[data-theme="dark"] .xcard{ background:rgba(255,255,255,.07); }
+[data-theme="dark"] .qr{ background:rgba(255,255,255,.07); }
+[data-theme="dark"] .diff .n{ color:var(--gold); }
+[data-theme="dark"] .eyebrow,[data-theme="dark"] .label,[data-theme="dark"] .sec-h,[data-theme="dark"] .badge .b2{ color:rgba(255,255,255,.82); }
 
-/* ===== justified running text (flush both edges, hyphenated to avoid rivers) ===== */
-.sub,.intro,.st-body,.body p,.infra-line,.modclar,.mod p,.xcard p,.diff p,.bound p{ text-align:justify; text-justify:inter-word; hyphens:auto; -webkit-hyphens:auto; }
+/* improved contrast — secondary text never washes out */
+.eyebrow,.label,.sec-h{ color:var(--muted); }
+
+/* card drop-shadows (both modes) */
+.mod,.xcard,.qr{ box-shadow:0 12px 28px -14px rgba(20,40,38,.5); }
+[data-theme="dark"] .mod,[data-theme="dark"] .xcard,[data-theme="dark"] .qr{ box-shadow:0 20px 44px -16px rgba(0,0,0,.66); }
+
+/* theme toggle (screen only) */
+.theme-toggle{ position:fixed; z-index:90; bottom:16px; right:16px; font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:9px 15px; border-radius:999px; cursor:pointer; background:var(--petrol); color:var(--paper); border:1px solid var(--petrol); box-shadow:0 8px 22px -10px rgba(0,0,0,.45); -webkit-tap-highlight-color:transparent; }
+
+/* force-justify all running text + tighter (single) line spacing */
+.sheet p,.sub,.intro,.st-body,.body p,.infra-line,.modclar,.mod p,.xcard p,.diff p,.bound p,.src,.crole{ text-align:justify; text-justify:inter-word; hyphens:auto; -webkit-hyphens:auto; }
+.sub,.intro,.st-body,.body p,.infra-line,.modclar,.mod p,.xcard p,.diff p{ line-height:1.4; }
+
+/* theme-aware print (matches the on-screen mode) */
+@media print{ html,body{ background:var(--surround); } .sheet{ background:var(--paper); } .theme-toggle{ display:none; } }
 </style>
 </head>
 <body>
@@ -213,7 +227,7 @@ h1{font-weight:700;color:var(--petrol);font-size:clamp(25px,4.4vw,38px);line-hei
       <div class="eyebrow">FOSENSE · ONE-PAGE COMPANY PROFILE</div>
       <h1>Fosense builds clinician-controlled clinical evidence technology for child and adolescent mental health and neurodevelopmental care.</h1>
       <p class="sub">Source-linked information organization, contradiction mapping, and a structured behavioral phenotype — prepared as draft materials for clinician review, without autonomous diagnosis, treatment recommendations, or clinical decision-making.</p>
-      <p class="intro"><strong>Fosense</strong> develops <strong>Fosight</strong>, a proprietary clinician-controlled platform for organizing multi-source clinical information in child and adolescent mental health and neurodevelopmental services. Fosight helps clinicians structure fragmented information from parents, caregivers, teachers, questionnaires, prior reports, clinical observations, parent portal inputs, and optional structured gameplay interactions. The product preserves source traceability, surfaces gaps and discrepancies, and prepares information for clinician review without autonomous interpretation or decision-making.</p>
+      <p class="intro"><strong>Fosense</strong> develops <strong>Fosight</strong>, a proprietary clinician-controlled platform for organizing multi-source clinical information in child and adolescent mental health and neurodevelopmental services. Fosight helps clinicians structure fragmented information from parents, caregivers, teachers, questionnaires, prior reports, clinical observations, and supervised game interactions. The product preserves source traceability, surfaces gaps and discrepancies, and prepares information for clinician review without autonomous interpretation or decision-making.</p>
       <p class="modclar">Fosight's Adventure is an optional structured gameplay intake module within Fosight — not the full product and not a standalone diagnostic tool.</p>
     </section>
 
@@ -227,12 +241,10 @@ h1{font-weight:700;color:var(--petrol);font-size:clamp(25px,4.4vw,38px);line-hei
         <div class="sources">
           <div class="src">Parents and caregivers</div>
           <div class="src">Teachers</div>
-          <div class="src">Parent portal inputs</div>
           <div class="src">Clinical observations</div>
           <div class="src">Prior reports</div>
           <div class="src">Questionnaires and scales</div>
-          <div class="src">Uploaded materials</div>
-          <div class="src">Optional structured gameplay</div>
+          <div class="src">Supervised game interaction</div>
         </div>
       </section>
 
@@ -261,12 +273,11 @@ h1{font-weight:700;color:var(--petrol);font-size:clamp(25px,4.4vw,38px);line-hei
     <section class="block s-only" style="border-top:0;margin-top:14px;padding-top:0;">
       <div class="modules">
         <div class="mod"><div class="mod-top"><span class="mod-name">Clinical Workflow Assistant</span><span class="mod-st warm">Early version available</span></div><p>Helps clinicians organize case review steps, evidence status, draft materials, follow-up items, and clinician-controlled workflow actions.</p></div>
-        <div class="mod"><div class="mod-top"><span class="mod-name">Parent Portal</span><span class="mod-st go">Working portal</span></div><p>Gives families a structured entry point for intake tasks, document collection, questionnaires, and clinic-guided communication.</p></div>
-        <div class="mod"><div class="mod-top"><span class="mod-name">iPhone parent access</span><span class="mod-st go">Available</span></div><p>Parents can access the portal from an iPhone application, supporting mobile-friendly participation in intake and follow-up workflows.</p></div>
+        <div class="mod"><div class="mod-top"><span class="mod-name">Parent Portal</span><span class="mod-st go">Working portal</span></div><p>A structured entry point for families: intake tasks, document collection, questionnaires, and clinic-guided communication. Apple application is available.</p></div>
         <div class="mod"><div class="mod-top"><span class="mod-name">Role-based clinic workspace</span><span class="mod-st warm">Available / early</span></div><p>Supports supervisory admin, clinic admin / front desk, clinician / therapist, and pending provider access workflows.</p></div>
         <div class="mod"><div class="mod-top"><span class="mod-name">Optional gamified intake</span><span class="mod-st dev">In development</span></div><p>Fosight's Adventure is an optional structured gameplay module designed to contribute behavioral signals for clinician review.</p></div>
         <div class="mod"><div class="mod-top"><span class="mod-name">Adaptive questionnaires</span><span class="mod-st dev">In development</span></div><p>Adaptive questionnaire modules are being developed to help collect context-sensitive information from families, teachers, or care teams.</p></div>
-        <div class="mod"><div class="mod-top"><span class="mod-name">Case handoff workflows</span><span class="mod-st dev">In development</span></div><p>Case handoff workflows are being developed to support continuity when a child moves between clinicians, teams, or clinics, subject to appropriate permissions and deployment requirements.</p></div>
+        <div class="mod"><div class="mod-top"><span class="mod-name">Case handoff workflows</span><span class="mod-st go">Available</span></div><p>Support continuity when a child moves between clinicians, teams, or clinics, subject to appropriate permissions and deployment requirements.</p></div>
         <div class="mod"><div class="mod-top"><span class="mod-name">FHIR-compatible interoperability</span><span class="mod-st work">Active workstream</span></div><p>Fosight is being designed with future interoperability in mind, including FHIR-compatible data exchange as implementation matures.</p></div>
         <div class="mod"><div class="mod-top"><span class="mod-name">Security &amp; regulatory-readiness</span><span class="mod-st work">Active workstream</span></div><p>Security, privacy, governance, regulatory-readiness, and validation pathways are active implementation priorities.</p></div>
       </div>
@@ -372,13 +383,20 @@ h1{font-weight:700;color:var(--petrol);font-size:clamp(25px,4.4vw,38px);line-hei
 
     <!-- actions (screen only) -->
     <nav class="cta s-only">
-      <a class="primary" href="@@VCARD@@" download="Dr-Olga-Kovalchuk.vcf">↓&nbsp;Save contact</a>
+      <a class="primary" href="mailto:olgakovalchuk@fosense.io?subject=Meeting%20request%20%E2%80%94%20Fosense">Request meeting</a>
+      <a href="@@VCARD@@" download="Dr-Olga-Kovalchuk.vcf">↓&nbsp;Save contact</a>
       <button type="button" onclick="window.print()">Download A4 PDF</button>
-      <a href="mailto:olgakovalchuk@fosense.io">Email</a>
       <a class="bare" href="https://fosense.io" target="_blank" rel="noopener">Open website&nbsp;→</a>
     </nav>
 
   </div>
 </div>
+<button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light or dark mode">Light</button>
+<script>
+(function(){var h=document.documentElement,b=document.getElementById('themeToggle');
+function set(t){h.setAttribute('data-theme',t);if(b)b.textContent=(t==='dark'?'Light':'Dark');}
+if(b)b.addEventListener('click',function(){set(h.getAttribute('data-theme')==='dark'?'light':'dark');});
+set(h.getAttribute('data-theme')||'dark');})();
+</script>
 </body>
 </html>
