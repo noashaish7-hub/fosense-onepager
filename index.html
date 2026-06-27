@@ -176,6 +176,20 @@ h1{font-weight:700;color:var(--petrol);font-size:clamp(27px,5.1vw,43px);line-hei
   .qr img{width:84px;height:84px;padding:4px;}
   .qr .qt1{font-size:9px;} .qr .qt2{font-size:7.6px;}
 }
+
+/* ===== DARK / NEGATIVE THEME — petrol #406060 ground, white text ===== */
+:root{ --paper:#406060; --surround:#37514e; --petrol:#FFFFFF; --ink:#EEF2F0; --muted:rgba(238,242,240,.62); --hair:rgba(238,242,240,.18); }
+.mast img,.contact img{ filter:brightness(0) invert(1); }
+.sheet{ box-shadow:0 1px 0 rgba(255,255,255,.06),0 30px 70px -30px rgba(0,0,0,.5); }
+.spine-line{ background:rgba(238,242,240,.28); }
+.mod{ background:rgba(255,255,255,.05); }
+.mod-st.go{ background:var(--gold); color:#20302d; }
+.mod-st.warm{ background:transparent; color:var(--gold); border:1px solid rgba(244,193,74,.55); }
+.mod-st.work{ background:transparent; color:var(--ink); border:1px dashed rgba(238,242,240,.5); }
+.xcard{ background:rgba(255,255,255,.05); }
+.qr{ background:rgba(255,255,255,.05); }
+.diff .n{ color:var(--gold); }
+@media print{ html,body{ background:#37514e; } .sheet{ background:var(--paper); } }
 </style>
 </head>
 <body>

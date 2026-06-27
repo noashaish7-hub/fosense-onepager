@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fosense — One-Page Company Profile</title>
+<meta name="description" content="Fosense builds clinician-controlled clinical evidence technology for child and adolescent mental health and neurodevelopmental care.">
+<style>
+@@FONTFACE@@
+:root{
+  --paper:#F2F3F1; --surround:#E9ECE8; --petrol:#406060; --ink:#24332F; --muted:#5C6E6A;
+  --gold:#F4C14A; --hair:rgba(64,96,96,.16);
+  --sans:'Arimo','Helvetica Neue','Helvetica','Arial',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{background:var(--surround);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+body{overflow-x:hidden;}
+::selection{background:var(--petrol);color:var(--paper);}
+@keyframes lineGrow{from{transform:scaleY(0);}to{transform:scaleY(1);}}
+@keyframes tickIn{from{opacity:0;transform:scale(.4);}to{opacity:1;transform:scale(1);}}
+
+.pad{min-height:100vh;display:flex;justify-content:center;padding:clamp(12px,4vw,48px);}
+.sheet{width:100%;max-width:880px;background:var(--paper);color:var(--ink);
+  box-shadow:0 1px 0 rgba(64,96,96,.12),0 24px 60px -28px rgba(36,51,47,.32);
+  padding:clamp(26px,5vw,56px);}
+
+/* masthead */
+.mast{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:18px 28px;}
+.mast img{height:clamp(40px,6.5vw,52px);width:auto;display:block;}
+.badge{text-align:right;max-width:320px;margin-left:auto;}
+.badge .b1{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--petrol);line-height:1.5;}
+.badge .b2{font-size:11.5px;color:var(--muted);line-height:1.55;margin-top:3px;}
+.rule{height:1px;background:var(--hair);margin:clamp(20px,3.4vw,30px) 0 0;}
+
+/* hero */
+.hero{padding-top:clamp(22px,3.6vw,34px);}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--muted);}
+h1{font-weight:700;color:var(--petrol);font-size:clamp(27px,5.1vw,43px);line-height:1.06;letter-spacing:-.012em;margin:18px 0 0;max-width:20ch;text-wrap:balance;}
+.sub{font-size:clamp(14.5px,1.9vw,16.5px);line-height:1.5;color:var(--ink);margin:clamp(18px,2.6vw,24px) 0 0;max-width:64ch;text-wrap:pretty;}
+.intro{font-size:clamp(13px,1.7vw,14px);line-height:1.62;color:var(--ink);margin:clamp(22px,3vw,30px) 0 0;max-width:78ch;text-wrap:pretty;}
+.intro strong{color:var(--petrol);font-weight:700;}
+.modclar{margin:14px 0 0;font-size:12.5px;line-height:1.5;color:var(--muted);padding-left:13px;border-left:2px solid var(--gold);max-width:74ch;}
+
+/* spine */
+.spine{position:relative;padding-left:clamp(40px,5vw,52px);margin:clamp(34px,5vw,50px) 0 0;}
+.spine-line{position:absolute;left:clamp(15px,2.2vw,19px);top:7px;bottom:7px;width:2px;background:rgba(64,96,96,.30);transform-origin:top center;animation:lineGrow .95s cubic-bezier(.2,.7,.15,1) forwards;}
+.station{position:relative;}
+.station+.station{margin-top:clamp(26px,3.8vw,38px);}
+.tick{position:absolute;left:clamp(-30px,-3.4vw,-38px);top:12px;width:11px;height:11px;background:var(--gold);opacity:0;animation:tickIn .5s ease-out forwards;}
+.st-head{display:flex;align-items:baseline;gap:14px;}
+.st-num{font-size:clamp(15px,2vw,17px);font-weight:700;color:var(--petrol);letter-spacing:.04em;}
+.st-title{margin:0;font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--petrol);}
+.sources{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));column-gap:32px;margin-top:14px;}
+.src{font-size:13px;line-height:1.45;color:var(--ink);border-top:1px solid var(--hair);padding:8px 0;}
+.st-body{font-size:clamp(13px,1.7vw,14px);line-height:1.6;color:var(--ink);margin:13px 0 0;max-width:66ch;text-wrap:pretty;}
+
+/* labelled blocks */
+.block{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:clamp(32px,4.4vw,44px);padding-top:clamp(20px,3vw,28px);border-top:1px solid var(--hair);}
+.label{flex:0 0 150px;font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--muted);padding-top:3px;}
+.body{flex:1 1 380px;}
+.body p{font-size:clamp(13px,1.7vw,14px);line-height:1.6;color:var(--ink);max-width:70ch;text-wrap:pretty;}
+.body p+p{margin-top:14px;}
+.diff-grid{flex:1 1 380px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 36px;}
+.diff{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--hair);}
+.diff .n{font-size:20px;font-weight:700;color:var(--petrol);line-height:1;flex:0 0 auto;}
+.diff p{margin:0;font-size:13px;line-height:1.5;color:var(--ink);text-wrap:pretty;}
+.bound{display:flex;gap:13px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--hair);}
+.bound .sq{flex:0 0 auto;width:7px;height:7px;background:var(--petrol);margin-top:6px;}
+.bound p{margin:0;font-size:12.5px;line-height:1.5;color:var(--ink);text-wrap:pretty;}
+
+/* modules grid (screen) */
+.modules{flex:1 1 380px;display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:12px;}
+.mod{border:1px solid var(--hair);border-top:2px solid var(--petrol);background:#fff;padding:13px 14px;}
+.mod-top{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.mod-name{font-size:13.5px;font-weight:700;color:var(--petrol);line-height:1.2;}
+.mod-st{flex:0 0 auto;font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;white-space:nowrap;}
+.mod-st.go{background:var(--petrol);color:var(--paper);}
+.mod-st.warm{background:rgba(244,193,74,.28);color:#7a5a12;}
+.mod-st.dev{background:transparent;color:var(--muted);border:1px solid var(--hair);}
+.mod-st.work{background:transparent;color:var(--petrol);border:1px dashed rgba(64,96,96,.5);}
+.mod p{margin:8px 0 0;font-size:12px;line-height:1.45;color:var(--ink);}
+
+/* infrastructure + patent */
+.infra-line{font-size:13px;line-height:1.55;color:var(--ink);max-width:74ch;}
+.patent{margin-top:10px;font-size:11.5px;line-height:1.5;color:var(--muted);font-style:italic;}
+
+/* explore action cards (screen only) */
+.explore{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px;}
+.xcard{border:1px solid var(--hair);background:#fff;padding:18px;display:flex;flex-direction:column;}
+.xcard h3{font-size:15px;font-weight:700;color:var(--petrol);}
+.xcard p{margin:8px 0 16px;font-size:12.5px;line-height:1.5;color:var(--ink);flex:1 1 auto;}
+.xbtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:13.5px;font-weight:700;
+  padding:12px 18px;min-height:44px;text-decoration:none;background:var(--petrol);color:var(--paper);border:1.5px solid var(--petrol);}
+.xbtn.alt{background:transparent;color:var(--petrol);}
+
+/* contact */
+.contact{display:flex;flex-wrap:wrap;gap:18px 40px;align-items:flex-end;justify-content:space-between;margin-top:clamp(34px,4.6vw,48px);padding-top:clamp(22px,3vw,30px);border-top:2px solid var(--petrol);}
+.contact .cname{font-size:clamp(16px,2.2vw,19px);font-weight:700;color:var(--petrol);line-height:1.2;}
+.contact .crole{font-size:13px;color:var(--ink);line-height:1.5;margin-top:2px;}
+.contact .clinks{font-size:13px;color:var(--ink);line-height:1.6;margin-top:8px;}
+.contact .clinks a{color:var(--petrol);text-decoration:none;font-weight:700;}
+.contact .clinks .k{color:var(--muted);}
+.contact .clinks .dot{color:rgba(64,96,96,.4);padding:0 8px;}
+.contact img{height:48px;width:auto;opacity:.92;display:block;}
+
+/* QR */
+.qr{display:flex;align-items:center;gap:16px;margin-top:clamp(22px,3vw,28px);padding:14px;background:#fff;border:1px solid var(--hair);}
+.qr img{width:104px;height:104px;flex:0 0 auto;background:#fff;padding:6px;}
+.qr .qt1{font-size:13px;font-weight:700;color:var(--petrol);}
+.qr .qt2{font-size:11.5px;color:var(--muted);line-height:1.5;margin-top:3px;}
+
+/* CTA bar (screen only) */
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(24px,3.2vw,32px);}
+.cta a,.cta button{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:inherit;font-size:14px;font-weight:700;padding:13px 22px;min-height:44px;text-decoration:none;cursor:pointer;border:1.5px solid rgba(64,96,96,.40);background:transparent;color:var(--petrol);}
+.cta a.primary{background:var(--petrol);color:var(--paper);border-color:var(--petrol);}
+.cta a.bare{border:0;padding-left:0;}
+
+.sec-h{font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--muted);margin-bottom:4px;}
+
+@media (prefers-reduced-motion:reduce){
+  .spine-line{animation:none;transform:none;}
+  .tick{animation:none;opacity:1;transform:none;}
+}
+
+/* ---- mobile ---- */
+@media (max-width:760px){
+  .sheet{padding:22px 18px;}
+  .badge{text-align:left;margin-left:0;max-width:none;}
+  h1{font-size:clamp(26px,8vw,34px);max-width:none;}
+  .block{gap:8px 0;}
+  .label{flex-basis:100%;}
+  .body,.diff-grid,.modules{flex-basis:100%;}
+  .contact{align-items:flex-start;}
+  .cta{gap:10px;}
+  .cta a,.cta button{flex:1 1 100%;}
+  .cta a.bare{flex-basis:auto;}
+  .explore{grid-template-columns:1fr;}
+}
+
+/* ---- PRINT: single A4 ---- */
+@page{size:A4 portrait;margin:0;}
+@media print{
+  html,body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{overflow:visible;}
+  .pad{padding:0;display:block;}
+  .sheet{max-width:none;width:210mm;min-height:297mm;box-shadow:none;padding:6mm 11mm;}
+  .spine-line,.tick{animation:none;opacity:1;transform:none;}
+  .s-only{display:none!important;}
+  .mast img{height:32px;}
+  .badge .b1{font-size:8px;} .badge .b2{font-size:8px;}
+  .rule{margin-top:7px;}
+  .hero{padding-top:8px;}
+  .eyebrow{font-size:8.3px;}
+  h1{font-size:17px;line-height:1.03;margin-top:5px;max-width:34ch;}
+  .sub{font-size:9.3px;margin-top:5px;max-width:80ch;}
+  .intro{font-size:8.2px;line-height:1.3;margin-top:6px;max-width:120ch;}
+  .modclar{font-size:7.8px;margin-top:5px;padding-left:8px;}
+  .spine{margin-top:8px;padding-left:28px;}
+  .station+.station{margin-top:6px;}
+  .st-title{font-size:9px;} .st-num{font-size:11px;}
+  .src{font-size:8px;padding:2px 0;}
+  .sources{margin-top:4px;}
+  .st-body{font-size:8.1px;line-height:1.28;margin-top:3px;}
+  .block{margin-top:6px;padding-top:4px;gap:4px 28px;}
+  .label{font-size:8px;flex-basis:100px;}
+  .body p,.diff p{font-size:8px;line-height:1.26;}
+  .body p+p{margin-top:3px;}
+  .diff{padding:3px 0;} .diff .n{font-size:11px;}
+  .infra-line{font-size:8px;line-height:1.26;} .patent{font-size:7.4px;margin-top:4px;}
+  .bound{padding:1.6px 0;} .bound p{font-size:7.9px;line-height:1.24;}
+  .contact{margin-top:6px;padding-top:4px;}
+  .contact .cname{font-size:12px;} .contact .crole{font-size:8px;} .contact .clinks{font-size:8px;}
+  .contact img{height:30px;}
+  .qr{margin-top:7px;padding:7px 10px;gap:11px;border:1px solid #c9d2cf;}
+  .qr img{width:84px;height:84px;padding:4px;}
+  .qr .qt1{font-size:9px;} .qr .qt2{font-size:7.6px;}
+}
+
+/* ===== DARK / NEGATIVE THEME — petrol #406060 ground, white text ===== */
+:root{ --paper:#406060; --surround:#37514e; --petrol:#FFFFFF; --ink:#EEF2F0; --muted:rgba(238,242,240,.62); --hair:rgba(238,242,240,.18); }
+.mast img,.contact img{ filter:brightness(0) invert(1); }
+.sheet{ box-shadow:0 1px 0 rgba(255,255,255,.06),0 30px 70px -30px rgba(0,0,0,.5); }
+.spine-line{ background:rgba(238,242,240,.28); }
+.mod{ background:rgba(255,255,255,.05); }
+.mod-st.go{ background:var(--gold); color:#20302d; }
+.mod-st.warm{ background:transparent; color:var(--gold); border:1px solid rgba(244,193,74,.55); }
+.mod-st.work{ background:transparent; color:var(--ink); border:1px dashed rgba(238,242,240,.5); }
+.xcard{ background:rgba(255,255,255,.05); }
+.qr{ background:rgba(255,255,255,.05); }
+.diff .n{ color:var(--gold); }
+@media print{ html,body{ background:#37514e; } .sheet{ background:var(--paper); } }
+</style>
+</head>
+<body>
+<div class="pad">
+  <div class="sheet">
+
+    <!-- masthead -->
+    <header class="mast">
+      <img src="@@LOGO@@" alt="Fosense">
+      <div class="badge">
+        <div class="b1">MEET FOSENSE AT MIXiii HEALTH-TECH.IL 2026</div>
+        <div class="b2">June 29–30, 2026 · ICC Jerusalem · Startup exhibition booth</div>
+      </div>
+    </header>
+    <div class="rule"></div>
+
+    <!-- hero -->
+    <section class="hero">
+      <div class="eyebrow">FOSENSE · ONE-PAGE COMPANY PROFILE</div>
+      <h1>Fosense builds clinician-controlled clinical evidence technology for child and adolescent mental health and neurodevelopmental care.</h1>
+      <p class="sub">Source-linked information organization, contradiction mapping, and draft clinical materials — without autonomous diagnosis, treatment recommendations, or clinical decision-making.</p>
+      <p class="intro"><strong>Fosense</strong> develops <strong>Fosight</strong>, a proprietary clinician-controlled platform for organizing multi-source clinical information in child and adolescent mental health and neurodevelopmental services. Fosight helps clinicians structure fragmented information from parents, caregivers, teachers, questionnaires, prior reports, clinical observations, parent portal inputs, and optional structured gameplay interactions. The product preserves source traceability, surfaces gaps and discrepancies, and prepares information for clinician review without autonomous interpretation or decision-making.</p>
+      <p class="modclar">Fosight's Adventure is an optional structured gameplay intake module within Fosight — not the full product and not a standalone diagnostic tool.</p>
+    </section>
+
+    <!-- spine -->
+    <div class="spine">
+      <div class="spine-line"></div>
+
+      <section class="station">
+        <span class="tick" style="animation-delay:.25s"></span>
+        <div class="st-head"><span class="st-num">01</span><h2 class="st-title">MULTIPLE SOURCES</h2></div>
+        <div class="sources">
+          <div class="src">Parents and caregivers</div>
+          <div class="src">Teachers</div>
+          <div class="src">Parent portal inputs</div>
+          <div class="src">Clinical observations</div>
+          <div class="src">Prior reports</div>
+          <div class="src">Questionnaires and scales</div>
+          <div class="src">Uploaded materials</div>
+          <div class="src">Optional structured gameplay</div>
+        </div>
+      </section>
+
+      <section class="station">
+        <span class="tick" style="animation-delay:.45s"></span>
+        <div class="st-head"><span class="st-num">02</span><h2 class="st-title">SOURCE-LINKED EVIDENCE WORKSPACE</h2></div>
+        <p class="st-body">Fosight brings this information into source-linked evidence profiles, showing where each statement came from, which sources support it, and where gaps, context differences, or discrepancies require clinician review.</p>
+      </section>
+
+      <section class="station">
+        <span class="tick" style="animation-delay:.65s"></span>
+        <div class="st-head"><span class="st-num">03</span><h2 class="st-title">CLINICIAN REVIEW</h2></div>
+        <p class="st-body">Fosight prepares structured draft materials and contradiction maps for clinician review, editing, and confirmation. It does not determine clinical significance or make autonomous clinical decisions.</p>
+      </section>
+    </div>
+
+    <!-- modular by design -->
+    <section class="block">
+      <div class="label">MODULAR BY DESIGN</div>
+      <div class="body">
+        <p>Fosight is modular by design. Clinics can use the core evidence workspace and add modules for workflow assistance, parent intake, adaptive questionnaires, optional structured gameplay, clinic administration, and case handoffs.</p>
+      </div>
+    </section>
+
+    <!-- module cards (screen) -->
+    <section class="block s-only" style="border-top:0;margin-top:14px;padding-top:0;">
+      <div class="modules">
+        <div class="mod"><div class="mod-top"><span class="mod-name">Clinical Workflow Assistant</span><span class="mod-st warm">Early version available</span></div><p>Helps clinicians organize case review steps, evidence status, draft materials, follow-up items, and clinician-controlled workflow actions.</p></div>
+        <div class="mod"><div class="mod-top"><span class="mod-name">Parent Portal</span><span class="mod-st go">Working portal</span></div><p>Gives families a structured entry point for intake tasks, document collection, questionnaires, and clinic-guided communication.</p></div>
+        <div class="mod"><div class="mod-top"><span class="mod-name">iPhone parent access</span><span class="mod-st go">Available</span></div><p>Parents can access the portal from an iPhone application, supporting mobile-friendly participation in intake and follow-up workflows.</p></div>
+        <div class="mod"><div class="mod-top"><span class="mod-name">Role-based clinic workspace</span><span class="mod-st warm">Available / early</span></div><p>Supports supervisory admin, clinic admin / front desk, clinician / therapist, and pending provider access workflows.</p></div>
+        <div class="mod"><div class="mod-top"><span class="mod-name">Optional gamified intake</span><span class="mod-st dev">In development</span></div><p>Fosight's Adventure is an optional structured gameplay module designed to contribute behavioral signals for clinician review.</p></div>
+        <div class="mod"><div class="mod-top"><span class="mod-name">Adaptive questionnaires</span><span class="mod-st dev">In development</span></div><p>Adaptive questionnaire modules are being developed to help collect context-sensitive information from families, teachers, or care teams.</p></div>
+        <div class="mod"><div class="mod-top"><span class="mod-name">Case handoff workflows</span><span class="mod-st dev">In development</span></div><p>Case handoff workflows are being developed to support continuity when a child moves between clinicians, teams, or clinics, subject to appropriate permissions and deployment requirements.</p></div>
+        <div class="mod"><div class="mod-top"><span class="mod-name">FHIR-compatible interoperability</span><span class="mod-st work">Active workstream</span></div><p>Fosight is being designed with future interoperability in mind, including FHIR-compatible data exchange as implementation matures.</p></div>
+        <div class="mod"><div class="mod-top"><span class="mod-name">Security &amp; regulatory-readiness</span><span class="mod-st work">Active workstream</span></div><p>Security, privacy, governance, regulatory-readiness, and validation pathways are active implementation priorities.</p></div>
+      </div>
+    </section>
+
+    <!-- infrastructure + patent -->
+    <section class="block">
+      <div class="label">INFRASTRUCTURE</div>
+      <div class="body">
+        <p class="infra-line">Fosight is designed to operate as a standalone clinical workspace or as an EHR-adjacent evidence layer. FHIR-compatible interoperability, security, privacy, regulatory-readiness, and validation pathways are active workstreams.</p>
+        <p class="patent">Patent-pending architecture for multi-source clinical data processing and traceable clinical information representation.</p>
+      </div>
+    </section>
+
+    <!-- why it matters -->
+    <section class="block">
+      <div class="label">WHY IT MATTERS</div>
+      <div class="body">
+        <p>Child and adolescent behavioral cases rarely arrive as one clean story. Parents, teachers, questionnaires, prior reports, and clinical observations may describe different versions of the same child. Fosight preserves these differences instead of flattening them into a single summary, helping clinicians see what was reported, where it came from, and how sources diverge.</p>
+      </div>
+    </section>
+
+    <!-- what makes fosight different -->
+    <section class="block">
+      <div class="label">WHAT MAKES FOSIGHT DIFFERENT</div>
+      <div class="diff-grid">
+        <div class="diff"><span class="n">01</span><p>Source-linked evidence, not opaque summaries.</p></div>
+        <div class="diff"><span class="n">02</span><p>Contradictions and information gaps surfaced for clinician review.</p></div>
+        <div class="diff"><span class="n">03</span><p>Role-aware workflows for clinics and families.</p></div>
+        <div class="diff s-only"><span class="n">04</span><p>Optional modules around one traceable evidence architecture.</p></div>
+        <div class="diff"><span class="n">05</span><p>Full clinician control over interpretation and decision-making.</p></div>
+      </div>
+    </section>
+
+    <!-- system boundaries -->
+    <section class="block">
+      <div class="label">SYSTEM BOUNDARIES</div>
+      <div class="body" style="flex-basis:100%;">
+        <div class="bound"><span class="sq"></span><p>Fosight does not diagnose or generate diagnostic classifications.</p></div>
+        <div class="bound"><span class="sq"></span><p>Fosight does not generate risk scores, clinical recommendations, or treatment recommendations.</p></div>
+        <div class="bound"><span class="sq"></span><p>Fosight does not replace clinical judgment or make autonomous treatment decisions.</p></div>
+        <div class="bound"><span class="sq"></span><p>Fosight organizes and highlights source-provided information; clinical significance remains for clinician review.</p></div>
+        <div class="bound"><span class="sq"></span><p>All interpretation, diagnosis, and treatment decisions remain with the clinician.</p></div>
+      </div>
+    </section>
+
+    <!-- status -->
+    <section class="block">
+      <div class="label">STATUS</div>
+      <div class="body">
+        <p>Fosense is advancing Fosight toward controlled pilot readiness. Fosight includes an early Clinical Workflow Assistant, a working Parent Portal, iPhone parent access, and role-based clinic workflows. Optional modules for structured gameplay intake, adaptive questionnaires, case handoffs, and EHR-adjacent deployment are in active development. Security, privacy, regulatory-readiness, validation pathways, and FHIR-compatible interoperability are active workstreams.</p>
+        <p><span style="color:var(--muted);font-weight:700;">Seeking:</span> clinicians, clinics, hospitals, HMOs, neurodevelopmental assessment centers, researchers, healthcare innovation units, strategic partners, and early-stage investors.</p>
+      </div>
+    </section>
+
+    <!-- explore fosight (screen) -->
+    <section class="block s-only">
+      <div class="label">EXPLORE FOSIGHT</div>
+      <div class="body" style="flex-basis:100%;">
+        <div class="explore">
+          <div class="xcard">
+            <h3>Fosight Core</h3>
+            <p>Clinician-controlled evidence workspace for source-linked information, contradiction mapping, and draft clinical materials.</p>
+            <a class="xbtn" href="https://core.fosight.cloud" target="_blank" rel="noopener">Open Core demo</a>
+          </div>
+          <div class="xcard">
+            <h3>Fosight's Adventure</h3>
+            <p>Optional structured gameplay intake module that captures behavioral signals for clinician review.</p>
+            <a class="xbtn" href="https://adventure.fosight.cloud" target="_blank" rel="noopener">Open Adventure demo</a>
+          </div>
+          <div class="xcard">
+            <h3>Request a private preview</h3>
+            <p>Meet Fosense at MIXiii or request a private Fosight demo conversation.</p>
+            <a class="xbtn alt" href="mailto:olgakovalchuk@fosense.io">Email / request demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact -->
+    <section class="contact">
+      <div>
+        <div class="label" style="margin-bottom:9px;">CONTACT</div>
+        <div class="cname">Dr. Olga Kovalchuk, MD, PhD</div>
+        <div class="crole">Chief Executive Officer</div>
+        <div class="clinks">
+          <span class="k">EMAIL&nbsp;</span><a href="mailto:olgakovalchuk@fosense.io">olgakovalchuk@fosense.io</a>
+          <span class="dot">·</span>
+          <span class="k">WEB&nbsp;</span><a href="https://fosense.io" target="_blank" rel="noopener">fosense.io</a>
+        </div>
+      </div>
+      <img src="@@MARK@@" alt="Fosense">
+    </section>
+
+    <!-- QR (print take-away + screen share) -->
+    <section class="qr">
+      <img src="@@QR@@" alt="QR code to the live Fosense one-pager">
+      <div>
+        <div class="qt1">Scan for live one-pager, demo links, and contact.</div>
+        <div class="qt2">fosense.io · Fosight Core &amp; Fosight's Adventure demos · save contact</div>
+      </div>
+    </section>
+
+    <!-- actions (screen only) -->
+    <nav class="cta s-only">
+      <a class="primary" href="@@VCARD@@" download="Dr-Olga-Kovalchuk.vcf">↓&nbsp;Save contact</a>
+      <button type="button" onclick="window.print()">Download A4 PDF</button>
+      <a href="mailto:olgakovalchuk@fosense.io">Email</a>
+      <a class="bare" href="https://fosense.io" target="_blank" rel="noopener">Open website&nbsp;→</a>
+    </nav>
+
+  </div>
+</div>
+</body>
+</html>
