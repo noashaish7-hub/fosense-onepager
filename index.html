@@ -207,8 +207,28 @@ h1{font-weight:700;color:var(--petrol);font-size:clamp(21px,3.5vw,31px);line-hei
 .sheet p,.sub,.intro,.st-body,.body p,.infra-line,.modclar,.mod p,.xcard p,.diff p,.bound p,.src,.crole,.clinks,.qt2{ line-height:1.3; }
 html,body{ line-height:1.3; }
 
-/* theme-aware print (matches the on-screen mode) */
-@media print{ html,body{ background:var(--surround); } .sheet{ background:var(--paper); } .theme-toggle{ display:none; } }
+/* ===== A4 PRINT = investor bulletin: one page, legible, skip the lengthy flow ===== */
+@media print{
+  html,body{ background:var(--paper); }
+  .sheet{ background:var(--paper); padding:6mm 12mm; min-height:289mm; }
+  .theme-toggle{ display:none; }
+  .spine,.why{ display:none !important; }   /* skip the lengthy how/why narrative */
+  .eyebrow{ font-size:9px; }
+  h1{ font-size:21px; line-height:1.07; }
+  .sub{ font-size:11.5px; line-height:1.3; }
+  .intro{ font-size:10px; line-height:1.34; }
+  .modclar{ font-size:9.5px; }
+  .label{ font-size:9px; }
+  .body p,.infra-line,.diff p{ font-size:10px; line-height:1.34; }
+  .diff .n{ font-size:14px; }
+  .bound p{ font-size:9.6px; line-height:1.32; }
+  .patent{ font-size:9px; }
+  .block{ margin-top:7px; padding-top:5px; }
+  .contact{ margin-top:8px; padding-top:6px; }
+  .contact .cname{ font-size:14px; } .contact .crole{ font-size:9.5px; } .contact .clinks{ font-size:9.5px; }
+  .contact img{ height:36px; } .mast img{ height:54px; }
+  .qr{ margin-top:8px; padding:8px 12px; } .qr img{ width:84px; height:84px; } .qr .qt1{ font-size:10px; } .qr .qt2{ font-size:8.5px; }
+}
 </style>
 </head>
 <body>
@@ -296,7 +316,7 @@ html,body{ line-height:1.3; }
     </section>
 
     <!-- why it matters -->
-    <section class="block">
+    <section class="block why">
       <div class="label">WHY IT MATTERS</div>
       <div class="body">
         <p>Child and adolescent behavioral cases rarely arrive as one clean story. Parents, teachers, questionnaires, prior reports, and clinical observations may describe different versions of the same child. Fosight preserves these differences instead of flattening them into a single summary, helping clinicians see what was reported, where it came from, and how sources diverge.</p>
